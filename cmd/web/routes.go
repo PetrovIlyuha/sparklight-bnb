@@ -1,11 +1,11 @@
 package main
 
 import (
+	"github.com/PetrovIlyuha/sparklight-bnb/pkg/config"
+	"github.com/PetrovIlyuha/sparklight-bnb/pkg/handlers"
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
 	"github.com/justinas/nosurf"
-	"github.com/PetrovIlyuha/sparklight-bnb/pkg/config"
-	"github.com/PetrovIlyuha/sparklight-bnb/pkg/handlers"
 	"net/http"
 )
 
@@ -16,6 +16,8 @@ func routes(app *config.AppConfig) http.Handler {
 	mux.Use(SessionLoad)
 	mux.Get("/", handlers.Repo.HomePage)
 	mux.Get("/about", handlers.Repo.AboutPage)
+	fileServer := http.FileServer(http.Dir("./static/"))
+	mux.Handle("/static/*", http.StripPrefix("/static", fileServer))
 	return mux
 }
 

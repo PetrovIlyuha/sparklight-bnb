@@ -1,14 +1,109 @@
 {{template "base" .}}
  {{define "content"}}
-   <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <main>
-            <header>
-              <h2 class="text-black text-2xl">Home Page</h2>             
-            </header>
-          </main>
+
+<link rel="stylesheet" href="/static/css/home-styles.css">
+<!-- Image Carousel -->
+<div class="carousel relative shadow-2xl bg-white">
+    <div class="carousel-inner relative overflow-hidden w-full">
+        <!--Slide 1-->
+        <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
+        <div class="carousel-item absolute opacity-0" style="height:60vh;">
+            <div class="block h-full w-full text-white flex items-center justify-center text-5xl text-center object-cover" style="background: url('/static/images/promo_carousel_1.jpg') center no-repeat; background-size: cover">
+                <span class="bg-gray-800 opacity-75 text-yellow-300 p-4 rounded-md">Adorable village houses</span>
+            </div>
         </div>
-      </div>
+        <label for="carousel-3" class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+        <label for="carousel-2" class="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+
+        <!--Slide 2-->
+        <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
+        <div class="carousel-item absolute opacity-0" style="height:60vh;">
+            <div class="block h-full w-full text-white flex items-center justify-center text-5xl text-center object-cover" style="background: url('/static/images/promo_carousel_2.jpg') center no-repeat; background-size: cover">
+                <span class="bg-gray-800 opacity-75 text-yellow-300 p-4 rounded-md">PostModern Luxury Facilities</span>
+            </div>
+        </div>
+        <label for="carousel-1" class="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+        <label for="carousel-3" class="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+
+        <!--Slide 3-->
+        <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
+        <div class="carousel-item absolute opacity-0" style="height:60vh;">
+            <div class="block h-full w-full text-white flex items-center justify-center text-5xl text-center object-cover" style="background: url('/static/images/promo_carousel_3.jpg') center no-repeat; background-size: cover">
+                <span class="bg-gray-800 opacity-75 text-yellow-300 p-4 rounded-md">Ultra-Hi Apartments</span>
+            </div>
+        </div>
+        <label for="carousel-2" class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+        <label for="carousel-1" class="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+
+        <!-- Add additional indicators for each slide-->
+        <ol class="carousel-indicators">
+            <li class="inline-block mr-3">
+                <label for="carousel-1" class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>
+            </li>
+            <li class="inline-block mr-3">
+                <label for="carousel-2" class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>
+            </li>
+            <li class="inline-block mr-3">
+                <label for="carousel-3" class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>
+            </li>
+        </ol>
+
     </div>
+</div>
+
+<div class="relative py-16 bg-white">
+    <div class="hidden absolute top-0 inset-x-0 h-1/2 bg-gray-50 lg:block" aria-hidden="true"></div>
+    <div class="max-w-7xl mx-auto bg-indigo-600 lg:bg-transparent lg:px-8">
+        <div class="lg:grid lg:grid-cols-12">
+            <div class="relative z-10 lg:col-start-1 lg:row-start-1 lg:col-span-4 lg:py-16 lg:bg-transparent">
+                <div class="absolute inset-x-0 h-1/2 bg-gray-50 lg:hidden" aria-hidden="true"></div>
+                <div class="max-w-md mx-auto px-4 sm:max-w-3xl sm:px-6 lg:max-w-none lg:p-0">
+                    <div class="aspect-w-10 aspect-h-6 sm:aspect-w-2 sm:aspect-h-1 lg:aspect-w-1">
+                        <img class="object-cover object-center rounded-3xl shadow-2xl" src="/static/images/cta_image.jpg" alt="cta image">
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative bg-gradient-to-r from-indigo-500 to-yellow-200 lg:col-start-3 lg:row-start-1 lg:col-span-10 lg:rounded-3xl lg:grid lg:grid-cols-10 lg:items-center">
+                <div class="hidden absolute inset-0 overflow-hidden rounded-3xl lg:block" aria-hidden="true">
+                    <svg class="absolute bottom-full left-full transform translate-y-1/3 -translate-x-2/3 xl:bottom-auto xl:top-0 xl:translate-y-0" width="404" height="384" fill="none" viewBox="0 0 404 384" aria-hidden="true">
+                        <defs>
+                            <pattern id="64e643ad-2176-4f86-b3d7-f2c5da3b6a6d" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                                <rect x="0" y="0" width="4" height="4" class="text-black" fill="black" />
+                            </pattern>
+                        </defs>
+                        <rect width="404" height="384" fill="url(#64e643ad-2176-4f86-b3d7-f2c5da3b6a6d)" />
+                    </svg>
+
+                </div>
+                <div class="relative bg-gradient-to-l from-blue-300 to-blue-900 rounded-md
+                            max-w-md mx-auto py-12 px-12 py-12 space-y-6 sm:max-w-3xl
+                            lg:max-w-none lg:col-start-4 lg:col-span-6 shadow-2xl">
+                    <h2 class="text-3xl font-extrabold text-white opacity-100" id="join-heading">Make Your Reservation or Create Listing</h2>
+                    <p class="text-lg text-white opacity-100">We guarantee the highest quality of support through the whole lifecycle of your interaction with our platform. Highly-trained real-estate consultants will be with you 24/7</p>
+                    <div class="flex items-center w-25 justify-between">
+                        <a class="block w-full py-3 px-5 text-center
+                                bg-white border border-transparent
+                                rounded-md shadow-md text-base font-medium
+                                text-indigo-700 hover:bg-blue-600 hover:text-white
+                                sm:inline-block sm:w-auto opacity-100"
+                           href="/reserve"
+                        >
+                            Make Reservation
+                        </a>
+                        <a class="block w-full py-3 px-5 text-center
+                                bg-white border border-transparent rounded-md
+                                shadow-md text-base font-medium text-indigo-700
+                                hover:bg-blue-600 hover:text-white sm:inline-block sm:w-auto opacity-100"
+                            href="/create"
+                        >
+                            Create Rental Posting
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
  {{end}}
