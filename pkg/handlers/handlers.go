@@ -29,6 +29,9 @@ func (repo *Repository) HomePage(rw http.ResponseWriter, req *http.Request) {
 	repo.App.Session.Put(req.Context(), "remote_ip", remoteIP)
 	render.HydrateTemplate(rw, "home.page.tmpl", &models.TemplateData{})
 }
+func (repo *Repository) ReserveListingsPage(rw http.ResponseWriter, req *http.Request) {
+	render.HydrateTemplate(rw, "reserve.page.tmpl", &models.TemplateData{})
+}
 
 func (repo *Repository) AboutPage(rw http.ResponseWriter, req *http.Request) {
 	stringMap := make(map[string]string)
